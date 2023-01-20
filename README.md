@@ -1,5 +1,7 @@
 # Jate - Just Another Text Editor
 
+![Screenshot of web app](./client/src/images/JATE.png)
+
 ## Description
 
 J.A.T.E. is a progressive web app that lets users enters text into a text editor where the data persists even when offline.
