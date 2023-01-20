@@ -14,20 +14,16 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+    // configure workbox plugins for a service worker and manifest file.
     plugins: [
-      // Webpack plugin for html file
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'J.A.T.E',
       }),
-
-      // Inject custom service worker
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
-
-      // Creating manifest file
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
@@ -47,7 +43,7 @@ module.exports = () => {
         ],
       }),
     ],
-
+    // add CSS loaders and babel to webpack.
     module: {
       rules: [
         {
