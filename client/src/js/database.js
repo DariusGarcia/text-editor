@@ -1,6 +1,6 @@
 import { openDB } from 'idb'
 
-const initdb = async () =>
+const startIndexDb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
@@ -42,4 +42,4 @@ export const getDb = async () => {
   return result?.value
 }
 
-initdb()
+startIndexDb()
